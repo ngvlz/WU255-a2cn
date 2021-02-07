@@ -4,10 +4,8 @@ import sqlite3
 import smtplib
 import re
 
-from bs4.element import Tag
 
 # TODO: Parse mask price
-
 user_agent = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 OPR/72.0.3815.487'}
 
 #search_name = input("Enter the product: ")
@@ -49,6 +47,17 @@ for price in product_prices:
 
 
 # TODO: Database for daily checker
+CONNECTION = sqlite3.connect('emp.sqlite3')
+cur = CONNECTION.cursor()
+cur.execute('CREATE TABLE Employees(LastName TEXT, FirstName TEXT, CloseContact TEXT, Symptoms TEXT, COVIDTest TEXT)')
+print("1 ----- I have been in close contact with anyone experiencing COVID symptoms or that has tested positive for COVID")
+print("2 ----- I have been NOT in close contact with anyone experiencing COVID symptoms or that has tested positive for COVID")
+closeContact = input("Please enter the following number (1 or 2) indicating the scenario that applies to you: ")
+if closeContact == "1":
+  lName = input("Please enter your last name: ")
+  fName = input("Please enter your first name: ")
+  cur.execute("INSERT INTO Employees (LastName, FirstName, CloseContact, Symptoms, COVIDTest) VALUES (?, ?, ?, ?, ?)", (lName, fName, "YES", "NA", "NA"))
+  print("Please stay home and quarantine.")
 
 
 # TODO: Vaccine status of employees
@@ -57,3 +66,7 @@ for price in product_prices:
 # TODO: Scrape for general COVID data in the country
     # *: Information about businesses in this part of town has .. covid cases
     # *: leveraging data that we have to enhance our app.
+
+# TODO: Vaccine status of employees
+
+# TODO: Scrape for general COVID data in the country
