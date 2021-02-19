@@ -18,4 +18,4 @@ This program is created by the Wear Your 255.255.255.0 team at Hack-in-Place Hac
 
 ## Demo
 
-![Wear Your Mask 255.255.255.0 Product](https://www.youtube.com/watch?v=r0lMGi_ebt4)
+[Wear Your Mask 255.255.255.0 Product](https://www.youtube.com/watch?v=r0lMGi_ebt4)
