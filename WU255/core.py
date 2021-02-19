@@ -336,7 +336,7 @@ def showMainMenu():
                                 f"[yellow]{name}[/yellow]",
                                 f"[yellow]{formatted_price}[/yellow]",
                                 f"[yellow]{url}[/yellow]")
-            console.print(table_amz)            
+            console_amz.print(table_amz)            
         elif selection == "2":
             #FUNCTION TO CALL EMAIL
             while True:
